@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/artListFragment">
+    <fragment
+        android:id="@+id/artListFragment"
+        android:name="com.farukaygun.kotlinartbookwithfragments.view.ArtListFragment"
+        android:label="fragment_art_list"
+        tools:layout="@layout/fragment_art_list" >
+        <action
+            android:id="@+id/action_artListFragment_to_artDetailsFragment"
+            app:destination="@id/artDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/artDetailsFragment"
+        android:name="com.farukaygun.kotlinartbookwithfragments.view.ArtDetailsFragment"
+        android:label="fragment_art_details"
+        tools:layout="@layout/fragment_art_details" >
+        <action
+            android:id="@+id/action_artDetailsFragment_to_artListFragment"
+            app:destination="@id/artListFragment" />
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <argument
+            android:name="info"
+            app:argType="string" />
+    </fragment>
+</navigation>
